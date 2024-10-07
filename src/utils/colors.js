@@ -1,0 +1,7 @@
+export const inputBorder = '#007BFF'
+export const buttontext='#f57c00'
+export const inputBackground = '#f9f9f9'
+export const shadowColor='#000'
+export const textColor='#333'
+export const textColorLight='#777'
+export const errorText='red'
