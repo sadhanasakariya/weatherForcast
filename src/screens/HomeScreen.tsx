@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
   getWeatherButton: {
     alignItems: 'center',
     borderRadius: 5,
+    backgroundColor:buttontext,
     flexDirection: 'row',
     marginBottom: 10,
     marginStart: 10,

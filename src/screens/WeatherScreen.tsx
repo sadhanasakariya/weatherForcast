@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity }
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+import { buttontext, lightBackground, textColorMedium, weatheritemBackground } from '../utils/colors';
 
 const WeatherScreen: React.FC<{ route: any; navigation: any }> = ({ navigation }) => {
 
@@ -65,7 +66,7 @@ const WeatherScreen: React.FC<{ route: any; navigation: any }> = ({ navigation }
 };
 const styles = StyleSheet.create({
   forecastItem: {
-    backgroundColor: '#e0f7fa',
+    backgroundColor: weatheritemBackground,
     padding: 15,
     marginVertical: 5,
     borderRadius: 8,
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
   },
   conditionText: {
     fontSize: 16,
-    color: '#555',
+    color: textColorMedium,
   },
   forecastList: {
     marginTop: 10,
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f5f5f5', // Light background color
+    backgroundColor: lightBackground,
   },
   title: {
     fontSize: 24,
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   navigateButtonText: {
-    color: '#f57c00',
+    color: buttontext,
     fontWeight: '700',
     fontSize: 20,
   }

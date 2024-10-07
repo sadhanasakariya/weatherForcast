@@ -9,7 +9,7 @@ export const SET_ERROR = 'SET_ERROR';
 
 export const API_KEY = 'bd5e378503939ddaee76f12ad7a97608';
 
-export const setWeatherData = (data: any) => ({
+export const setWeatherData = (data: unknown) => ({
   type: SET_WEATHER_DATA,
   payload: data,
 });
@@ -26,7 +26,7 @@ export const setError = (error: string | null) => ({
 
 // Async function to fetch weather data
 export const fetchWeatherForecast = (city: string): AppThunk => {
-  return async (dispatch: any) => {
+  return async (dispatch) => {
 
 
     dispatch(setLoading(true));
@@ -36,7 +36,7 @@ export const fetchWeatherForecast = (city: string): AppThunk => {
       const dataForecast = responseForecast.data;
 
       let dailyData = dataForecast
-      dailyData.list = dataForecast.list.filter((_: any, index: number) => index % 8 === 0);
+      dailyData.list = dataForecast.list.filter((_: unknown, index: number) => index % 8 === 0);
 
       dispatch(setWeatherData(dailyData));
     } catch (error) {

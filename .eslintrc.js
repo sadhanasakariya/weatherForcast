@@ -16,12 +16,12 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
+    jest: true, 
   },
   rules: {
-    // Customize your rules here
     'react-native/no-unused-styles': 'warn',
-    // 'react-native/sort-styles': 'warn',
-    'react/prop-types': 'off', // Turn off if you're using TypeScript
-    'sort-keys': 'off',
+    'react/prop-types': 'off',
+    'sort-keys': 'off', // Disable sorting of keys in objects
+    'react-native/sort-styles': 'off', // Disable sorting styles
   },
 };

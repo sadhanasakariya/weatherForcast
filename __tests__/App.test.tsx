@@ -6,15 +6,13 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from '../src/redux/store';
 import App from '../App';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 
 
-
-// Mocking AppNavigator within the scope of jest.mock
 jest.mock('../src/navigation/AppNavigator', () => {
-  return () => {
-    // Importing here allows access within the mock
+  // Create the mocked component
+  const MockedComponent = () => {
     const { View, Text } = require('react-native');
     return (
       <View>
@@ -22,7 +20,13 @@ jest.mock('../src/navigation/AppNavigator', () => {
       </View>
     );
   };
+
+  // Set a display name for easier debugging
+  MockedComponent.displayName = 'MockedAppNavigator';
+
+  return MockedComponent;
 });
+
 
 // Mock PersistGate for testing
 jest.mock('redux-persist/integration/react', () => ({
